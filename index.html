@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Rezaul Karim" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rezaul Karim | Profile</title>
+  <meta name="description" content="Personal profile website of Rezaul Karim." />
+
+  <!-- Open Graph / Link Preview -->
+  <meta property="og:title" content="Rezaul Karim | Profile" />
+  <meta property="og:description" content="Connect with Rezaul Karim via GitHub, Facebook, or Email." />
+  <meta property="og:image" content="https://kmdrezaul.github.io/profile/preview.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kmdrezaul.github.io/profile/" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <main class="profile-card">
+    <div class="image">
+      <img src="Profile.jpg" alt="Rezaul Karim" class="profile-img" />
+    </div>
+
+    <div class="text-data">
+      <h1 class="name">Rezaul Karim</h1>
+       
+    </div>
+
+    <div class="media-buttons">
+      <a
+        href="https://www.facebook.com/share/1CNfCFN4rM/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+        class="link"
+      >
+        <i class="bx bxl-facebook"></i>
+      </a>
+
+      <a
+        href="https://github.com/kmdrezaul"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"
+        class="link"
+      >
+        <i class="bx bxl-github"></i>
+      </a>
+
+      <a
+        href="mailto:kmd.rezaul926@gmail.com"
+        aria-label="Email"
+        class="link"
+      >
+        <i class="bx bxl-gmail"></i>
+      </a>
+    </div>
+
+    <div class="buttons">
+      <a
+        href="mailto:kmd.rezaul926@gmail.com?subject=Hello%20Rezaul&body=Hi%20Rezaul,%20I%20wanted%20to%20connect%20with%20you:"
+        class="button primary"
+      >
+        <i class="bx bx-send"></i>
+        <span>Message</span>
+      </a>
+
+      <button type="button" class="button secondary" id="copyEmailBtn" aria-label="Copy Email Address">
+        <i class="bx bx-copy"></i>
+        <span id="copyText">Copy Mail</span>
+      </button>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; <span id="year"></span> Rezaul Karim. All Rights Reserved.</p>
+    </footer>
+  </main>
+
+  <script>
+    // Set current year automatically
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // One-click email copy feedback
+    const copyBtn = document.getElementById("copyEmailBtn");
+    const copyText = document.getElementById("copyText");
+
+    copyBtn.addEventListener("click", () => {
+      navigator.clipboard.writeText("kmd.rezaul926@gmail.com").then(() => {
+        copyText.textContent = "Copied!";
+        setTimeout(() => {
+          copyText.textContent = "Copy Mail";
+        }, 2000);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+/* Google Fonts - Editorial Serif + Clean Sans */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  /* Fallback gradient matching Bg.jpg tones + wallpaper image */
+  background: linear-gradient(135deg, #7ec8e3 0%, #c8d8c0 50%, #f3b89b 100%);
+  background-image: url("Bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Liquid Glass Card */
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 380px;
+  width: 100%;
+  padding: 40px 28px 26px;
+  border-radius: 32px;
+  position: relative;
+
+  background: linear-gradient(
+    145deg,
+    rgba(24, 32, 38, 0.34) 0%,
+    rgba(16, 22, 28, 0.24) 100%
+  );
+  backdrop-filter: blur(42px) saturate(140%);
+  -webkit-backdrop-filter: blur(42px) saturate(140%);
+
+  /* Specular glass rim & ambient depth */
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  box-shadow:
+    0 24px 48px rgba(15, 23, 42, 0.22),
+    inset 0 1px 1px rgba(255, 255, 255, 0.42);
+  animation: cardEnter 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Profile Portrait Ring */
+.image {
+  position: relative;
+  height: 136px;
+  width: 136px;
+  border-radius: 50%;
+  padding: 4px;
+  margin-bottom: 18px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.65),
+    rgba(255, 255, 255, 0.14)
+  );
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.image .profile-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+  border-radius: 50%;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.image:hover .profile-img {
+  transform: scale(1.03);
+}
+
+/* Name & Role Badge */
+.profile-card .text-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.text-data .name {
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 1.25;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.text-data .job {
+  margin-top: 8px;
+  padding: 4px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+}
+
+/* Social Icon Buttons */
+.profile-card .media-buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.media-buttons .link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 20px;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.media-buttons .link:hover {
+  background: #ffffff;
+  color: #16202a;
+  transform: translateY(-3px);
+}
+
+/* Action Buttons */
+.profile-card .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.buttons .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 11px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.buttons .button.primary {
+  background: #ffffff;
+  color: #16202a;
+  border: 1px solid #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+}
+
+.buttons .button.primary:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.buttons .button.secondary {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.buttons .button.secondary:hover {
+  background: rgba(255, 255, 255, 0.24);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  margin-top: 26px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.78);
+  text-align: center;
+  letter-spacing: 0.2px;
+}
